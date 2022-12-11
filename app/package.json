@@ -20,6 +20,7 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.1.8",
     "borsh": "^0.6.0",
+    "gh-pages": "^4.0.0",
     "md5": "^2.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -31,7 +32,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -50,5 +52,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "https://ylgr.github.io/solana-basic-swap/"
 }
