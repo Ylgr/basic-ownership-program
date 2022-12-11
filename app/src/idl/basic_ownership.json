@@ -1,0 +1,93 @@
+{
+  "version": "0.1.0",
+  "name": "basic_ownership",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "ownership",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "signer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "fingerprint",
+          "type": {
+            "array": [
+              "u8",
+              16
+            ]
+          }
+        },
+        {
+          "name": "owner",
+          "type": "publicKey"
+        }
+      ]
+    },
+    {
+      "name": "transfer",
+      "accounts": [
+        {
+          "name": "ownership",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "signer",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "owner",
+          "type": "publicKey"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Ownership",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "fingerprint",
+            "type": {
+              "array": [
+                "u8",
+                16
+              ]
+            }
+          },
+          {
+            "name": "owner",
+            "type": "publicKey"
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "address": "AtJQsbbEmsKRAsTN3bAfwpLn3w6gYDwMwerJVqTv1AJD"
+  }
+}

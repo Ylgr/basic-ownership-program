@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import {
-  ConnectionProvider, useAnchorWallet,
+  ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
@@ -18,10 +18,9 @@ import {
 } from "@solana/wallet-adapter-wallets";
 import { clusterApiUrl } from "@solana/web3.js";
 import MyWallet from "./MyWallet";
-import md5 from 'md5';
 function App() {
   // Can be set to 'devnet', 'testnet', or 'mainnet-beta'
-  const network = WalletAdapterNetwork.Mainnet;
+  const network = WalletAdapterNetwork.Devnet;
   // You can also provide a custom RPC endpoint
   const endpoint = React.useMemo(() => clusterApiUrl(network), [network]);
 
@@ -67,13 +66,6 @@ function App() {
             </a>
             {}
             <MyWallet />
-            <input type="file" onChange={async (file) => {
-              console.log('file: ', file.target)
-              if(file.target.files && file.target.files.length) {
-                const blob = new Uint8Array(await file.target.files[0].arrayBuffer())
-                console.log(md5(blob))
-              }
-            }} multiple={false}></input>
           </header>
         </div>
       </WalletProvider>

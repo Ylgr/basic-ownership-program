@@ -30,7 +30,7 @@ describe("basic-ownership", () => {
             signers: [stringAccount],
           });
 
-      let ownership = await program.account.ownership.fetch(stringAccount.publicKey);
+      const ownership = await program.account.ownership.fetch(stringAccount.publicKey);
       assert.equal(ownership.fingerprint.toString(), md5StringData.toString());
       assert.equal(ownership.owner.toBase58(), provider.wallet.publicKey.toBase58());
     });
@@ -50,7 +50,7 @@ describe("basic-ownership", () => {
             signers: [],
           });
 
-      let ownership = await program.account.ownership.fetch(stringAccount.publicKey);
+      const ownership = await program.account.ownership.fetch(stringAccount.publicKey);
       assert.equal(ownership.fingerprint.toString(), md5StringData.toString());
       assert.equal(ownership.owner.toBase58(), newOwnerWallet.publicKey.toBase58());
     });
